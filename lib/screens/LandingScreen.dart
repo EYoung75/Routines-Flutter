@@ -1,14 +1,15 @@
 import "package:flutter/material.dart";
+import "../widgets/customAppBar.dart";
 
 class LandingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Routines",
-          style: Theme.of(context).textTheme.title,
-        ),
+        centerTitle: false,
+        
+        elevation: 10,
+        title: Text("Routines", style: Theme.of(context).textTheme.title,),
       ),
       body: Container(
         height: double.infinity,
