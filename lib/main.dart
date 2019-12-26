@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:routines/screens/ActScreen.dart';
 import "./screens/LandingScreen.dart";
 
 void main() async {
@@ -20,13 +21,15 @@ class _RoutinesState extends State<Routines> {
         accentColor: Color.fromRGBO(221, 51, 42, 1),
         fontFamily: "BenchNine",
         textTheme: TextTheme(
-          title: TextStyle(fontSize: 30, color: Colors.white),
-          subtitle: TextStyle(fontSize: 30, color: Colors.white),
-          body1: TextStyle(fontSize: 24, color: Colors.white),
-          button: TextStyle(fontSize: 24, color: Colors.white)
-        ),
+            title: TextStyle(fontSize: 30, color: Colors.white),
+            subtitle: TextStyle(fontSize: 30, color: Colors.white),
+            body1: TextStyle(fontSize: 24, color: Colors.white),
+            button: TextStyle(fontSize: 24, color: Colors.white)),
       ),
       home: LandingScreen(),
+      routes: {
+        "/act" : (ctx) => ActScreen()
+      },
     );
   }
 }

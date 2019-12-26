@@ -64,7 +64,9 @@ class LandingScreen extends StatelessWidget {
                       "Act",
                       style: Theme.of(context).textTheme.button,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("/act");
+                    },
                   ),
                 )
               ],
