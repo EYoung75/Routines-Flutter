@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:routines/screens/LoginScreen.dart';
 
 class LandingScreen extends StatelessWidget {
   @override
@@ -22,7 +23,7 @@ class LandingScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.title,
             ),
             Text(
-              "Your new routine setting and goal tracking companion",
+              "Your new routine and goal tracking companion",
               style: TextStyle(
                 color: Color.fromRGBO(255, 255, 255, .6),
               ),
@@ -46,8 +47,18 @@ class LandingScreen extends StatelessWidget {
               elevation: 7,
             ),
             FlatButton(
-              onPressed: () {},
-              child: Text("I already have an account", style: Theme.of(context).textTheme.body1,),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (ctx) => LoginScreen(),
+                    fullscreenDialog: true,
+                  ),
+                );
+              },
+              child: Text(
+                "I already have an account",
+                style: Theme.of(context).textTheme.body1,
+              ),
             )
           ],
         ),

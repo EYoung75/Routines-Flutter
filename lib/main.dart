@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:routines/screens/ActScreen.dart';
 import "./screens/LandingScreen.dart";
 import "./screens/CreateScreen.dart";
+import "./screens/LoginScreen.dart";
 
 void main() async {
   runApp(Routines());
@@ -32,6 +33,7 @@ class _RoutinesState extends State<Routines> {
       ),
       home: LandingScreen(),
       routes: {
+        "/login": (ctx) => LoginScreen(),
         "/create": (ctx) => CreateScreen(),
         "/act": (ctx) => ActScreen(),
       },

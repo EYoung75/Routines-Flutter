@@ -4,6 +4,9 @@ class CreateScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+      ),
       body: Container(
         alignment: Alignment.center,
         padding: EdgeInsets.all(50),
@@ -21,9 +24,8 @@ class CreateScreen extends StatelessWidget {
               height: 50,
             ),
             TextFormField(
-              decoration: InputDecoration(
-                hintText: "My name is...", hintMaxLines: 32
-              ),
+              decoration:
+                  InputDecoration(hintText: "My name is...", hintMaxLines: 32),
             )
           ],
         ),
