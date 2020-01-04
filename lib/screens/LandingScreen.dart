@@ -1,75 +1,53 @@
 import "package:flutter/material.dart";
-import "../widgets/customAppBar.dart";
 
 class LandingScreen extends StatelessWidget {
   @override
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: false,
-        
-        elevation: 10,
-        title: Text("Routines", style: Theme.of(context).textTheme.title,),
-      ),
       body: Container(
+        padding: EdgeInsets.symmetric(vertical: 100),
         height: double.infinity,
         width: double.infinity,
         color: Theme.of(context).primaryColor,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Text(
-              "Good Morning Evan!",
-              style: Theme.of(context).textTheme.subtitle,
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Divider(
-              height: 2,
+            Icon(
+              Icons.help,
+              size: 80,
               color: Colors.white,
-              endIndent: 150,
-              indent: 150,
+            ),
+            Text(
+              "Welcome to Horizons",
+              style: Theme.of(context).textTheme.title,
+            ),
+            Text(
+              "Your new routine setting and goal tracking companion",
+              style: TextStyle(
+                color: Color.fromRGBO(255, 255, 255, .6),
+              ),
             ),
             SizedBox(
-              height: 15,
+              height: 100,
             ),
-            Text("What would you like to do?"),
-            SizedBox(
-              height: 50,
+            RaisedButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
+              onPressed: () {
+                Navigator.of(context).pushNamed("/create");
+              },
+              child: Container(
+                padding: EdgeInsets.all(10),
+                alignment: Alignment.center,
+                width: 250,
+                child: Text("Get Started"),
+              ),
+              elevation: 7,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Container(
-                  height: 50,
-                  width: 150,
-                  child: RaisedButton(
-                    color: Color.fromRGBO(72, 165, 26, 1),
-                    elevation: 7,
-                    child: Text(
-                      "Edit/Review",
-                      style: Theme.of(context).textTheme.button,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-                Container(
-                  height: 50,
-                  width: 150,
-                  child: RaisedButton(
-                    color: Theme.of(context).accentColor,
-                    elevation: 7,
-                    child: Text(
-                      "Act",
-                      style: Theme.of(context).textTheme.button,
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).pushNamed("/act");
-                    },
-                  ),
-                )
-              ],
+            FlatButton(
+              onPressed: () {},
+              child: Text("I already have an account", style: Theme.of(context).textTheme.body1,),
             )
           ],
         ),
