@@ -1,6 +1,17 @@
 import "package:flutter/material.dart";
 
-class CreateScreen extends StatelessWidget {
+class CreateScreen extends StatefulWidget {
+  @override
+  _CreateScreenState createState() => _CreateScreenState();
+}
+
+class _CreateScreenState extends State<CreateScreen> {
+  String _name;
+
+  // saveName() {
+  //   Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => ));
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,15 +28,30 @@ class CreateScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "Welcome to Horizons! First, let's get to know you a little bit better:",
+              "Welcome to Horizons! First things first, what's your name?",
               style: Theme.of(context).textTheme.title,
             ),
             SizedBox(
               height: 50,
             ),
             TextFormField(
+              onChanged: (value) {
+                setState(() {
+                  _name = value;
+                });
+              },
               decoration:
                   InputDecoration(hintText: "My name is...", hintMaxLines: 32),
+            ),
+            Container(
+              alignment: Alignment.bottomRight,
+              child: InkWell(
+                child: Icon(
+                  Icons.arrow_drop_down,
+                  size: 40,
+                ),
+                onTap: () {},
+              ),
             )
           ],
         ),

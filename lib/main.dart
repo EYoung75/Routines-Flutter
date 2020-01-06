@@ -3,9 +3,11 @@ import 'package:routines/screens/ActScreen.dart';
 import "./screens/LandingScreen.dart";
 import "./screens/CreateScreen.dart";
 import "./screens/LoginScreen.dart";
+import "package:flutter/services.dart";
 
 void main() async {
   runApp(Routines());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 }
 
 class Routines extends StatefulWidget {
@@ -23,7 +25,10 @@ class _RoutinesState extends State<Routines> {
         accentColor: Color.fromRGBO(221, 51, 42, 1),
         fontFamily: "BenchNine",
         textTheme: TextTheme(
-          title: TextStyle(fontSize: 30, color: Colors.white, ),
+          title: TextStyle(
+            fontSize: 30,
+            color: Colors.white,
+          ),
           subtitle: TextStyle(fontSize: 30, color: Colors.white),
           body1: TextStyle(fontSize: 24, color: Colors.white),
           button: TextStyle(fontSize: 24, color: Colors.white),
